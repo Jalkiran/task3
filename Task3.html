@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-Column Responsive Layout</title>
+    <style>
+        /* Flexbox Section */
+        .flexbox-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .flexbox-column {
+            flex: 1 1 calc(33.33% - 20px);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Grid Section */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .grid-column {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .flexbox-column {
+                flex: 1 1 100%;
+            }
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox 3-Column Layout</h1>
+    <div class="flexbox-container">
+        <div class="flexbox-column">
+            <h2>Column 1</h2>
+            <p>This is the first column.</p>
+        </div>
+        <div class="flexbox-column">
+            <h2>Column 2</h2>
+            <p>This is the second column.</p>
+        </div>
+        <div class="flexbox-column">
+            <h2>Column 3</h2>
+            <p>This is the third column.</p>
+        </div>
+    </div>
+    
+    <h1>Grid 3-Column Layout</h1>
+    <div class="grid-container">
+        <div class="grid-column">
+            <h2>Column 1</h2>
+            <p>This is the first column.</p>
+        </div>
+        <div class="grid-column">
+            <h2>Column 2</h2>
+            <p>This is the second column.</p>
+        </div>
+        <div class="grid-column">
+            <h2>Column 3</h2>
+            <p>This is the third column.</p>
+        </div>
+    </div>
+</body>
+</html>
